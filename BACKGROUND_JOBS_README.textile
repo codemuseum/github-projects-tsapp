@@ -1,0 +1,7 @@
+h1. How to Setup the Background Jobs needed for GitHub Projects TSApp
+
+h2. Database Backups
+
+Run the Rake Task at 1AM
+
+<code>0 1 * * * cd /var/www/apps/github-projects/current; RAILS_ENV=production rake backup >> /var/www/apps/github-projects/shared/log/backup.log</code>

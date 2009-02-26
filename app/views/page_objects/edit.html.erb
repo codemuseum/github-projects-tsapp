@@ -1,0 +1,19 @@
+<% stylesheets 'github-projects', 'github-projects-edit' %>
+<% # javascripts 'github-projects-edit' %>
+
+<div>
+<% fields_for_page_object do |f| %>
+  <h2>
+    <%= f.label :header %>: 
+    <%= f.text_field :header %>
+  </h2>
+
+  <p>
+    <%= f.label :account, "GitHub Username" %>: <%= f.text_field :account %>
+  </p>
+
+  <p>
+    <%= f.label :columns %>: <%= f.select :columns, 1..6 %>
+  </p>
+<% end %>
+</div>

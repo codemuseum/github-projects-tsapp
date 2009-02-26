@@ -1,0 +1,15 @@
+Usage:
+
+  script/generate tsapp PageObject asset_host [page_object_column_name:column_type page_object_column_name:column_type2 ...]
+
+Example:
+
+  script/generate tsapp PageObject thrivesmart.localhost:3002 message:string
+
+This will:
+
+* Generate Controller
+* Generate Route for Controller
+* Generate Page Object Model
+* Generate Page Object Migration
+* Generate asset host

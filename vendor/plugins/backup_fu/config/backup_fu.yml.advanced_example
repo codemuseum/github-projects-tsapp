@@ -1,0 +1,53 @@
+ # The app_name is used as the backup filename prefix
+app_name: replace_me
+# You must create the s3_bucket specified below via an external tool like S3 Browser, etc
+s3_bucket: some-s3-bucket
+aws_access_key_id: --replace me with your AWS access key id--
+aws_secret_access_key: --replace me with your AWS secret access key--
+
+# Advanced customizations
+
+# Use dynamic bucket path  with erb
+s3_bucket: <%=  %>
+
+backup and compress all app files w/o log/* and tmp/* dirs
+[config sample]
+
+added support of sqlite
+
+# Turn on verbose output for debugging purposes:
+verbose: true
+
+# If the user running the script cannot find 'mysqldump' in its path, specify the full path with:
+dump_path: /usr/local/mysql/bin/mysqldump
+
+# To specify your own options for mysqldump. Default is: "--complete-insert --skip-extended-insert"
+mysqldump_options: --single-transaction --flush-logs --add-drop-table --add-locks --create-options --disable-keys --extended-insert --quick
+
+# Enable the ability to backup your application's static files with the 'static_paths' config key.
+#  Specify either relative (to RAILS_ROOT) paths (space-delimited)
+static_paths: "public/static public/users"
+
+# Or fully-qualified path(s):
+static_paths: "/u/apps/foo/current/public/static"
+
+# The default dump base path is 'tmp/backups'.  This can be changed with:
+dump_base_path: /tmp
+
+# To use tar-gzipping or zipping for compression. Use the values tar-gzip or zip here. Default is tar-gzip.
+compressor: tar-gzip
+
+# To disable compression of the DB backup:
+disable_compression: true
+
+# Password-protect zip files. The password will be omitted if empty.
+# This is a weak protection
+# Read the man page of zip for clearance of security
+zip_password: <your-password-here>
+
+# To turn on using 'nice' to keep backup CPU processing to a minimum:
+enable_nice: true
+nice_level: 15
+
+# Set the number of most recent backups to keep when running the cleanup task
+keep_backups: 10

@@ -1,0 +1,11 @@
+body.displaying-page.action-edit .app-github-projects .projects.size-0 { height: 20px; border:1px dotted gray;}
+.app-github-projects .project { padding:1em; }
+
+.app-github-projects .project { float:left; }
+.app-github-projects .projects.cols-1 .project { float:none; }
+
+.app-github-projects .projects.cols-2 .project { width:50%; }
+.app-github-projects .projects.cols-3 .project { width:33.33%; }
+.app-github-projects .projects.cols-4 .project { width:25%; }
+.app-github-projects .projects.cols-5 .project { width:20%; }
+.app-github-projects .projects.cols-6 .project { width:16.66%; }

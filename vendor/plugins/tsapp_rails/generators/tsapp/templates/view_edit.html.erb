@@ -1,0 +1,11 @@
+<%% # stylesheets 'my-tsapp', 'my-tsapp-edit' %>
+<%% # javascripts 'my-tsapp-edit' %>
+
+<%% fields_for_page_object do |f| %>
+<% for attribute in attributes -%>
+  <p>
+    <%%= f.label :<%= attribute.name %> %><br />
+    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+  </p>
+<% end -%>
+<%% end %>

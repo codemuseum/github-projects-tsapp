@@ -1,0 +1,12 @@
+development:
+  api_key: provided by thrivesmartdev.com
+  secret_key: provided by thrivesmartdev.com
+
+test:
+  api_key: provided by thrivesmartdev.com
+  secret_key: provided by thrivesmartdev.com
+
+production:
+  api_key: provided by thrivesmarthq.com
+  secret_key: provided by thrivesmarthq.com
+

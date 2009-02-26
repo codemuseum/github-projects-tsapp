@@ -1,0 +1,10 @@
+<%% # stylesheets 'my-tsapp' %>
+<%% # javascripts 'my-tsapp' %>
+
+<% for attribute in attributes -%>
+<p>
+  <b><%= attribute.column.human_name %>:</b>
+  <%%=h @<%= singular_name %>.<%= attribute.name %> %>
+</p>
+
+<% end -%>

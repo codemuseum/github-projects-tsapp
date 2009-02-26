@@ -11,3 +11,5 @@ body.displaying-page.action-edit .app-github-projects .projects.size-0 { height:
 .app-github-projects .projects.cols-6 .project { width:16.66%; }
 
 .app-github-projects .project.fork .name { background: url("/github-projects/images/fork.png") no-repeat center left; padding-left: 18px; }
+.app-github-projects .projects .clear {clear:left; line-height:1px; font-size:1px; height:1px;}
+.app-github-projects .projects.cols-1 .clear { clear:none; }

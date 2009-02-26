@@ -28,7 +28,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "json"
-  config.gem "mash"
+  config.gem "mbleigh-mash", :lib => 'mash', :source => "http://gems.github.com"
   config.gem "mbleigh-ruby-github", :lib => 'ruby-github', :source => "http://gems.github.com"
   config.gem 'mime-types', :lib => "mime/types"
   config.gem 'right_http_connection'

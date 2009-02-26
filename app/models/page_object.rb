@@ -10,6 +10,6 @@ class PageObject < ActiveRecord::Base
   end
   
   def repositories
-    github ? [] : github.repositories
+    github ? github.repositories : []
   end
 end

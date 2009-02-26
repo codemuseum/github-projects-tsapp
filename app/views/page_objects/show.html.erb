@@ -5,8 +5,8 @@
   <h2><%=h @page_object.header %></h2>
 <% end %>
 
-<div class="projects size-<%=h @page_object.repositories.size %> cols-<%=h @page_object.columns %>">
-  <% @page_object.repositories.each do |repo| %>
+<div class="projects size-<%=h @page_object.repos.size %> cols-<%=h @page_object.columns %>">
+  <% @page_object.repos.each do |repo| %>
   <div class="project<%= ' fork' if repo.fork %>">
     <div class="name"><a href="<%= repo.url %>" title="Visit <%=h repo.name %> at GitHub"><%=h repo.name %></a></div>
     <div class="details">

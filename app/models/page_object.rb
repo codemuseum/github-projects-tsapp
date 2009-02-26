@@ -9,7 +9,7 @@ class PageObject < ActiveRecord::Base
     self.account.blank? ? nil : GitHub::API.user(self.account)
   end
   
-  def repositories
-    github ? github.repositories : []
+  def repos
+    @repos ||= github ? github.repositories : []
   end
 end

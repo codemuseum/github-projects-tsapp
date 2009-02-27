@@ -1,6 +1,6 @@
 development:
   # app_name is used as the backup filename prefix
-  app_name: GitHub Projects TSApp
+  app_name: GitHubProjectsTSApp
   # You must create the s3_bucket specified below via an external tool like S3 Browser, etc
   s3_bucket: githubprojects-backups-test
   aws_access_key_id: --replace me with your AWS access key id--
@@ -8,7 +8,7 @@ development:
   verbose: true
 
 production:
-  app_name: GitHub Projects TSApp
+  app_name: GitHubProjectsTSApp
   s3_bucket: githubprojects-backups
   aws_access_key_id: --replace me with your AWS access key id--
   aws_secret_access_key: --replace me with your AWS secret access key--

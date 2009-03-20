@@ -1,4 +1,4 @@
-body.displaying-page.action-edit .app-github-projects .projects.size-0 { height: 20px; border:1px dotted gray;}
+body.displaying-page.action-edit .app-github-projects .projects.size-0 { height: 40px; border:1px dotted gray;background:transparent url(../images/no-projects.png) center center no-repeat;}
 .app-github-projects .project { padding:1em; }
 
 .app-github-projects .project { float:left; }
@@ -10,6 +10,6 @@ body.displaying-page.action-edit .app-github-projects .projects.size-0 { height:
 .app-github-projects .projects.cols-5 .project { width:20%; }
 .app-github-projects .projects.cols-6 .project { width:16.66%; }
 
-.app-github-projects .project.fork .name { background: url("/github-projects/images/fork.png") no-repeat center left; padding-left: 18px; }
+.app-github-projects .project.fork .name { background: url(../images/fork.png) no-repeat center left; padding-left: 18px; }
 .app-github-projects .projects .clear {clear:left; line-height:1px; font-size:1px; height:1px;}
 .app-github-projects .projects.cols-1 .clear { clear:none; }

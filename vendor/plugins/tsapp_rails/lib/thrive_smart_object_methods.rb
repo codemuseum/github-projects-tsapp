@@ -1,6 +1,6 @@
 # In your PageObject and Theme models (ActiveRecord), don't forget to include this!  
 # In addition to providing some helpful methods, it also defines to_param,  
-# find_by_param, and overrides to_xml to include HTML
+# find_by_param, and overrides to_json to include HTML
 #
 # class PageObject < ActiveRecord::Base
 #   include ThriveSmartObjectMethods
@@ -13,7 +13,7 @@ module ThriveSmartObjectMethods
   
   def self.included(klass)
     unless klass.included_modules.include?(InstanceMethods)
-      klass.send :alias_method, :tsom_original_to_xml, :to_xml
+      klass.send :alias_method, :tsom_original_to_json, :to_json
       
       klass.extend ClassMethods
       klass.send :include, InstanceMethods
@@ -130,26 +130,15 @@ module ThriveSmartObjectMethods
       ThriveSmartObjectMethods::Data
     end
   
-    def to_xml(options = {})
-      tsom_original_to_xml({:methods => [:html, :alml, :caching, :caching_scope]}.merge(options)) do |xml|
-        unless errors.nil? || errors.size == 0
-          xml.errors do errors.full_messages.each { |msg| xml.error msg } end
-        end
-        unless javascripts.nil? || javascripts.size == 0
-          # FIXME - this is a stop-gap measure for the period where rails can't handle simple arrays of strings
-          xml.javascripts :type => :array do javascripts.each { |src| xml.string do xml.string src end } end
-        end
-        unless stylesheets.nil? || stylesheets.size == 0
-          # FIXME - this is a stop-gap measure for the period where rails can't handle simple arrays of strings
-          xml.stylesheets :type => :array do stylesheets.each { |src| xml.string do xml.string src end } end
-        end
-      end
+    def to_json(options = {})
+      tsom_original_to_json({:methods => [:html, :alml, :caching, :caching_scope, :javascripts, :stylesheets, :errors]}.merge(options))
     end
   end
 
   class Data < ActiveResource::Base
     self.site = ThriveSmart::Constants.ts_platform_host
     self.collection_name = 'data' # FIXME when rails knows that 2 pieces of data is still "data" and not "datas"
+    self.format = :tson
 
     def self.prepare(site_uid, page_object_urn, user_session_id)
       headers[ThriveSmart::Constants.ts_site_headers_key] = site_uid

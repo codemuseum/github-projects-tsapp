@@ -62,7 +62,7 @@ module PageObjectsControllerHelper
         render_to_page_object # must come after validation
 
         respond_to do |format|
-          format.xml  { render :xml => @page_object, :status => (valid ? :ok : :unprocessable_entity) }
+          format.tson  { render :json => @page_object, :status => (valid ? :ok : :unprocessable_entity) }
         end
       end
 

@@ -1,3 +1,5 @@
+require 'active_resource_tson_format'
+
 module ThriveSmart
   module Helpers
     

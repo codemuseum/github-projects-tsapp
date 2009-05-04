@@ -11,7 +11,7 @@ module ThriveSmart
       def AssetHelper.asset_url(asset_type, asset_urn)
         asset_path = asset_type.downcase.pluralize
         asset_ext = asset_path == 'pictures' ? 'img' : 'file'
-        path = "/#{asset_path}/#{asset_urn}.#{asset_ext}"
+        path = "/site/#{asset_path}/#{asset_urn}.#{asset_ext}"
         AssetHelper.compute_asset_host(path) + path
       end
       
@@ -39,7 +39,7 @@ module ThriveSmart
       # Example link_to_new_page 'New Service...', {:representing => 'service'}, {:class => 'html-class-name'}
       #   This will make a link so that the user can easily create a new page representing a service.
       def link_to_new_page(title, options = {}, html_options = {})
-        link_to title, '/pages/new' + (options.empty? ? '' : "?#{options.to_query}" ), html_options
+        link_to title, '/site/pages/new' + (options.empty? ? '' : "?#{options.to_query}" ), html_options
       end
       
       # Returns the URL to the same page which owns the page object, with options as parameters
@@ -49,7 +49,7 @@ module ThriveSmart
       
       def formatted_site_data_url(format, data_path, options = {})
         return '' if data_path.nil?
-        "/data.#{format.to_s.downcase}?data_path=#{CGI.escape(data_path)}" + (options.empty? ? '' : "&#{{:options => options}.to_query}" )
+        "/site/data.#{format.to_s.downcase}?data_path=#{CGI.escape(data_path)}" + (options.empty? ? '' : "&#{{:options => options}.to_query}" )
       end
       
     end

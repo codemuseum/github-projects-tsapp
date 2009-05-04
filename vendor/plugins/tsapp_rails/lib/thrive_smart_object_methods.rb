@@ -136,7 +136,7 @@ module ThriveSmartObjectMethods
   end
 
   class Data < ActiveResource::Base
-    self.site = ThriveSmart::Constants.ts_platform_host
+    self.site = "#{ThriveSmart::Constants.ts_platform_host}/site"
     self.collection_name = 'data' # FIXME when rails knows that 2 pieces of data is still "data" and not "datas"
     self.format = :tson
 
